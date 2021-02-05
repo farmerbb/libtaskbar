@@ -81,3 +81,9 @@ def getLibVersion() {
 
     return libVersion.join('.')
 }
+
+tasks.register("outputVersion") {
+  doLast {
+    println getLibVersion()
+  }
+}
