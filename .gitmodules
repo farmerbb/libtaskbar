@@ -1,0 +1,3 @@
+[submodule "Taskbar"]
+	path = Taskbar
+	url = https://github.com/farmerbb/Taskbar
