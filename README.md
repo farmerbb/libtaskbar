@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation 'com.github.farmerbb:libtaskbar:2.1.1' // see badge above for latest version
+    implementation 'com.github.farmerbb:libtaskbar:2.2.0' // see badge above for latest version
 }
 ```
 
@@ -53,8 +53,6 @@ Finally, while Taskbar's desktop mode functionality is enabled out-of-the-box, i
 
 * If aapt complains about any resource conflicts, you may need to exclude the `com.google.android.material:material` transitive dependency from libtaskbar inside your build.gradle file.
 
-* libtaskbar currently does not support launchers with a targetSdkVersion of 30 or higher.  For now, please set your targetSdkVersion back to 29 in order to use libtaskbar.
-
 ### Example implementation
 
 An example implementation of libtaskbar using Lawnchair is available at https://github.com/farmerbb/libtaskbar-Lawnchair-Example.
@@ -63,11 +61,12 @@ You can also download a prebuilt APK here: https://github.com/farmerbb/libtaskba
 
 ### Changelog
 
+**v2.2.0**
+* Includes all changes from Taskbar 6.2
+* targetSdkVersions 30 and up are now supported
+
 **v2.1.1**
 * Includes all changes from Taskbar 6.1.1
-
-_Known issues:_
-* libtaskbar currently does not support launchers with a targetSdkVersion of 30 or higher
 
 **v2.1.0**
 * Includes all changes from Taskbar 6.1
