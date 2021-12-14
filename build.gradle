@@ -74,17 +74,15 @@ dependencies {
     implementation "org.lsposed.hiddenapibypass:hiddenapibypass:$HIDDEN_API_BYPASS_VERSION"
 }
 
-task androidSourcesJar(type: Jar) {
-    classifier 'sources'
-    from android.sourceSets.main.java.srcDirs 
-}
-
 project.afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
                 from components.release
-                artifact androidSourcesJar // optional sources
+
+                groupId = "com.github.farmerbb"             
+                artifactId = "libtaskbar"
+                version = getLibVersion()
             }
         }
     }
