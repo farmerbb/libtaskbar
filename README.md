@@ -64,6 +64,7 @@ You can also download a prebuilt APK here: https://github.com/farmerbb/libtaskba
 **v2.2.0**
 * Includes all changes from Taskbar 6.2
 * targetSdkVersions 30 and up are now supported
+* libtaskbar's secondary home activity intent filter is now set at a higher priority, to prevent conflicts with Launcher3's built-in secondary home activity
 
 **v2.1.1**
 * Includes all changes from Taskbar 6.1.1
