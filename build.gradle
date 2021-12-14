@@ -23,6 +23,7 @@ allprojects {
 
 apply from: 'Taskbar/dependencies.gradle'
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 repositories {
     google()
@@ -71,6 +72,22 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$APPCOMPAT_VERSION"
     implementation "com.google.android.material:material:$MATERIAL_VERSION"
     implementation "org.lsposed.hiddenapibypass:hiddenapibypass:$HIDDEN_API_BYPASS_VERSION"
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier 'sources'
+    from android.sourceSets.main.java.srcDirs 
+}
+
+project.afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                artifact androidSourcesJar // optional sources
+            }
+        }
+    }
 }
 
 def getLibVersion() {
